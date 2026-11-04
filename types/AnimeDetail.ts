@@ -32,7 +32,7 @@ interface AnimeDetail extends AnimeNode {
         day_of_the_week: string;
         start_time: string;
     };
-    source: string;
+    source?: string;
     average_episode_duration?: number;
     rating?: string;
     pictures?: {
@@ -45,10 +45,10 @@ interface AnimeDetail extends AnimeNode {
         relation_type: string;
         relation_type_formatted: string;
     }[];
-    studios?:{
+    studios?: {
         id: number;
         name: string;
-    };
+    }[];
     statistics?: {
         status: {
             watching: string;
