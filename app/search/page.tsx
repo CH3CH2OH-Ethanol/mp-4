@@ -100,32 +100,36 @@ function SearchPage() {
     }
 
     return (
-        <PageLayout
-            eyebrow="Search"
-            title="Find Anime"
-            description="Search MyAnimeList by title, then open a result to see more details."
-        >
-            <SearchForm onSubmit={search}>
-                <SearchLabel htmlFor="anime-search">Anime title</SearchLabel>
-                <SearchInput
-                    id="anime-search"
-                    type="search"
-                    value={searchText}
-                    placeholder="Try Frieren"
-                    onChange={(event) => setSearchText(event.target.value)}
-                />
-                <SearchButton type="submit" disabled={isLoading}>
-                    {isLoading ? "Searching..." : "Search"}
-                </SearchButton>
-            </SearchForm>
+        <>
+            <title>Find Anime | Anime Explorer</title>
+            <PageLayout
+                eyebrow="Search"
+                title="Find Anime"
+                description="Search MyAnimeList by title, then open a result to see more details."
+            >
+                <SearchForm onSubmit={search}>
+                    <SearchLabel htmlFor="anime-search">Anime title</SearchLabel>
+                    <SearchInput
+                        id="anime-search"
+                        type="search"
+                        value={searchText}
+                        placeholder="Try Frieren"
+                        onChange={(event) => setSearchText(event.target.value)}
+                    />
+                    <SearchButton type="submit" disabled={isLoading}>
+                        {isLoading ? "Searching..." : "Search"}
+                    </SearchButton>
+                </SearchForm>
 
-            {error && (
-                <ResultMessage>
-                    <StatusMessage tone="error">{error}</StatusMessage>
-                </ResultMessage>
-            )}
-            {hasSearched && <AnimeList list={animeList.data} />}
-        </PageLayout>
+                {error && (
+                    <ResultMessage>
+                        <StatusMessage tone="error">{error}</StatusMessage>
+                    </ResultMessage>
+                )}
+                {hasSearched && <AnimeList list={animeList.data}/>}
+            </PageLayout>
+        </>
+
     );
 }
 

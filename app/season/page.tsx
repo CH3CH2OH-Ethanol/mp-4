@@ -9,6 +9,10 @@ const CURRENT_SEASON: Season = {
     season: "fall",
 };
 
+export const metadata = {
+    title: "This Season",
+};
+
 async function SeasonList() {
     const result = await getSeasonalAnime(CURRENT_SEASON);
 

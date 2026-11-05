@@ -2,6 +2,11 @@ import {Suspense} from "react";
 import {getAnimeDetails} from "@/lib/mal";
 import AnimeDetailView from "@/components/AnimeDetailView";
 import PageLayout, {StatusMessage} from "@/components/PageLayout";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Detail",
+};
 
 async function AnimeDetails({params}: { params: Promise<{ id: string }> }) {
     const {id} = await params;
